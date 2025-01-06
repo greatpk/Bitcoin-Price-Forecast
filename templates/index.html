@@ -1,0 +1,169 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<!-- banner -->
+<section class="banner_w3lspvt" id="login">
+	<div class="csslider infinity" id="slider1">
+
+				<div class="banner-top1">
+					<div class="overlay">
+						<div class="container">
+							<div class="w3layouts-banner-info text-center">
+								<h3 class="text-wh">Bitcoin</h3>
+								<h4 class="text-wh mx-auto my-4"><b>Price stats and information.<br></b></h4>
+								<br>
+								<h4 class="text-wh mx-auto my-4"><strong>Problem Statements</strong></h4>
+								<p class="text-li mx-auto mt-2">
+									1. Bitcoin is the most complex cryptocurrency which value change in every second. <br>
+									2. Investing money for Bitcoin is more risk and less profit.<br>
+									3. The price of Bitcoin does not rely on at the business events. <br>
+
+							</div>
+						</div>
+					</div>
+				</div>
+	</div>
+</section>
+<!-- //banner -->
+<!-- core values -->
+<section class="core-value py-5">
+	<div class="container py-md-4">
+		<h3 class="heading mb-sm-5 mb-4 text-center"> About Bitcoin</h3>
+		<div class="row core-grids">
+			<div class="col-lg-6 core-left">
+			<br>
+				<img src="{{ url_for('static', filename='images/13.jpg') }}" class="img-fluid" alt="" />
+			</div>
+			<div class="col-lg-6 core-right">
+				<h3 class="mt-4">Bitcoin is the world’s first decentralized cryptocurrency – a type of digital asset</h3>
+				<p class="mt-3">The Bitcoin network (with an upper-case “B”) was launched in January 2009 by an anonymous computer programmer or group of programmers under the pseudonym “Satoshi Nakamoto.” The network is a peer-to-peer electronic payment system that uses a cryptocurrency called bitcoin (lower case “b”) to transfer value over the internet or act as a store of value like gold and silver.</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //core values -->
+
+<!-- Products & Services -->
+<section class="blog py-5">
+	<div class="container py-lg-5">
+		<h3 class="heading mb-sm-5 mb-4 text-center">Bitcoin price prediction </h3>
+		<div class="row blog-grids">
+			<div class="col-lg-4 col-md-6 blog-left mb-lg-0 mb-md-5 pb-md-5 pb-5">
+				<a href="{{ url_for('predict') }}">
+				<img src="{{ url_for('static', filename='images/s35.jpg') }}" class="img-fluid" alt="" />
+					<div class="blog-info">
+						<h4></h4>
+						<p class="mt-1"> To understand and identify daily trends in the Bitcoin market while gaining insight into optimal features surrounding Bitcoin price.</p>
+					</div>
+				</a>
+				<br><br><br>
+			</div>
+			<div class="col-lg-4 col-md-6 blog-middle mb-lg-0 mb-md-5 pb-md-5 pb-5">
+				<a href="{{ url_for('predict') }}">
+				<img src="{{ url_for('static', filename='images/s6.jpg') }}" class="img-fluid" alt="" />
+					<div class="blog-info">
+						<h4></h4>
+						<p class="mt-1">To determine the predictable
+price direction of Bitcoin in USD by machine learning techniques and to select the best model.</p>
+					</div>
+				</a><br><br>
+			</div>
+			<div class="col-lg-4 col-md-6 blog-right mb-lg-0 mb-sm-5 pb-lg-5 pb-md-5">
+				<a href="{{ url_for('predict') }}">
+				<img src="{{ url_for('static', filename='images/s7.jpg') }}" class="img-fluid" alt="">
+					<div class="blog-info">
+						<h4></h4>
+						<p class="mt-1">The price of Bitcoin does now not rely on at the business
+events or intervening government in contrast to the stock market.
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Predict Bitcoin Price</title>
+
+<style type="text/css">
+body{
+background-color:#FFFFFF;
+ background-size:10%;
+ animation: bgScroll 20s linear infinite;
+ color: black;
+ font-family: Trebuchet MS;
+}
+
+@keyframes bgScroll {
+ 0% {
+   background-position : 0px 0px
+ }
+ 100% {
+   background-position : 0px -808px
+ }
+}
+
+button {
+ background-color: #f4511e;
+ border: none;
+ color: black;
+ padding: 15px 32px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+ opacity: 0.9;
+   transition: 0.3s;
+ cursor:  pointer;
+ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+button:hover {
+ opacity: 1;
+ box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.predict{
+	font-size: 22px;
+
+}
+
+pre {tab-size: 16;}
+</style>
+</head>
+<body>
+<div class='login'>   
+<br><br>
+<h1><center>Want to know what will be bitcoin price in future?</center></h1>
+<br>
+<br>
+<center><h2>Choose which day forecast: </h2></center>
+
+<form action="{{ url_for('predict')}}", method="post">
+ <center>
+
+	 <input type="radio" id="7" name="prediction" value="7">7&emsp;&emsp;
+	 <input type="radio" id="30" name="prediction" value="30">30&emsp;&emsp;
+	 <input type="radio" id="90" name="prediction" value="90">90&emsp;&emsp;
+	 <br>
+	 <br>
+	 <button type="submit", class="btn btn-primary btn-block btn-large">Predict</button>
+	 <br><br><br><br>
+ </center>
+</form>
+
+</div>
+</body>
+</html>
+
+
+</html>
+
+{% endblock %}
+
+
+
